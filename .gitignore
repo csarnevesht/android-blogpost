@@ -1,7 +1,6 @@
 /build
 .gradle/**
 .idea/**
-android-blogpost.iml
 app.iml
 app/app.iml
 local.properties
