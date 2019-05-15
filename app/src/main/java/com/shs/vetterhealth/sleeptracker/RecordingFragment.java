@@ -55,10 +55,6 @@ public class RecordingFragment extends DialogFragment {
                 Toast t = Toast.makeText(getActivity(), "Saved!", Toast.LENGTH_LONG);
 
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("sleeptracker");
-//
-//                Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
-//
-//                Firebase obsref = ref.child("observations");
 
                 Map<String, String> post = new HashMap<String, String>();
                 post.put("title",title.getText().toString());
