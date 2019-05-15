@@ -96,8 +96,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v == buttonLogin){
-            //startActivity(new Intent(this,Dashboard.class));
-            loginUser();
+            startActivity(new Intent(this,Dashboard.class));
+//            loginUser();
         }
         if(v == textViewSignUp){
             // Open Sign Up Activity.

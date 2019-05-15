@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="rn97.first.MainActivity"
+    tools:context="com.shs.vetterhealth.therapy.MainActivity"
     android:background="#e8f4f8">
     <LinearLayout
         android:orientation="vertical"

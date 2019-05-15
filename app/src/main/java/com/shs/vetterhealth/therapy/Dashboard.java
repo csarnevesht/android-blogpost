@@ -41,7 +41,8 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.therapy_activity_dashboard);
 
-        GloEmail = getIntent().getStringExtra("key1");
+//        GloEmail = getIntent().getStringExtra("key1");
+        GloEmail = "TODO";
         //Toast.makeText(this,"is this the EMAIL = "+newString,Toast.LENGTH_SHORT).show();
         radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
         question = (TextView)findViewById(R.id.question);
@@ -54,7 +55,7 @@ public class Dashboard extends AppCompatActivity {
         //Get the bundle
         Bundle bundle = getIntent().getExtras();
         //Extract the data…
-        String studentEmail = bundle.getString("passinfo");
+//        String studentEmail = bundle.getString("passinfo");
 
         qRef.addValueEventListener(new ValueEventListener() {
             @Override

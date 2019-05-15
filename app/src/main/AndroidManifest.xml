@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -33,8 +35,10 @@
         <activity android:name="com.shs.vetterhealth.blogzone.SinglePostActivity"
             android:parentActivityName="com.shs.vetterhealth.blogzone.MainActivity"></activity>
         <activity android:name="com.shs.vetterhealth.sleeptracker.MainActivity" />
-        <activity android:name="com.shs.vetterhealth.therapy.MainActivity" />
-
+        <activity android:name="com.shs.vetterhealth.therapy.Dashboard" />
+        <activity android:name="com.shs.vetterhealth.therapy.AnalysisDisplay" />
+        <activity android:name="com.shs.vetterhealth.therapy.ApiAiTask" />
+        <activity android:name="com.shs.vetterhealth.chatbot.MainActivity" />
 
     </application>
 

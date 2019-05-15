@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="rn97.first.AnalysisDisplay">
+    tools:context="com.shs.vetterhealth.therapy.AnalysisDisplay">
 
     <LinearLayout
         android:layout_width="match_parent"

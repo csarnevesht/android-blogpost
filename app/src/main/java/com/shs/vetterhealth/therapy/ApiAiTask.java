@@ -53,7 +53,7 @@ public class ApiAiTask extends AppCompatActivity implements AIListener {
             int SCORE = Integer.parseInt(intent.getStringExtra("SCORE"));
             String query = Integer.toString(SCORE);
             //queryTextView.setText(query);
-            final AIConfiguration config = new AIConfiguration("key",
+            final AIConfiguration config = new AIConfiguration(/*CAROLINA"key"*/"09010a00bbbf40bebfd50f0bad426e58",
                     AIConfiguration.SupportedLanguages.English,
                     AIConfiguration.RecognitionEngine.System);
             aiService = AIService.getService(this, config);
@@ -149,8 +149,8 @@ public class ApiAiTask extends AppCompatActivity implements AIListener {
                 return;
             }
         }
-        //Toast.makeText(ApiAiTask.this,"Q = "+query,Toast.LENGTH_LONG).show();
-        //queryTextView.setText(query);
+//        Toast.makeText(ApiAiTask.this,"Q = "+query,Toast.LENGTH_LONG).show();
+//        queryTextView.setText(query);
 
         final AIConfiguration config = new AIConfiguration("3e74a84ecb864dd88edee1e7fa973d80",
                 AIConfiguration.SupportedLanguages.English,
