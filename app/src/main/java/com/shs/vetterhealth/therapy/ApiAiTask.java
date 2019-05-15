@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import com.google.gson.JsonElement;
 import com.shs.vetterhealth.blogzone.R;
@@ -82,6 +84,8 @@ public class ApiAiTask extends AppCompatActivity implements AIListener {
             }.execute(aiRequest);
 
         }
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     public void listenButtonOnClick(final View view){
         aiService.startListening();
@@ -199,7 +203,30 @@ public class ApiAiTask extends AppCompatActivity implements AIListener {
     @Override
     public void onAudioLevel(final float level) {}
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                if (getFragmentManager().getBackStackEntryCount() != 0) {
+                    getFragmentManager().popBackStack();
+                } else {
+                    NavUtils.navigateUpFromSameTask(this);
+                }
 
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() != 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+    }
 
 
 }

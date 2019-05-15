@@ -2,11 +2,13 @@ package com.shs.vetterhealth.therapy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +34,8 @@ public class AnalysisDisplay extends AppCompatActivity {
         setContentView(R.layout.therapy_activity_analysis_display);
         baseScore = getIntent().getStringExtra("SCORE");
         baseEmail = getIntent().getStringExtra("GLOEMAIL");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
     @Override
@@ -106,5 +110,30 @@ public class AnalysisDisplay extends AppCompatActivity {
     }
     public int calcScore(float no){
         return Math.round(100-(no*100/30));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                if (getFragmentManager().getBackStackEntryCount() != 0) {
+                    getFragmentManager().popBackStack();
+                } else {
+                    NavUtils.navigateUpFromSameTask(this);
+                }
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() != 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

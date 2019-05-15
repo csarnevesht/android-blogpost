@@ -34,11 +34,16 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity android:name="com.shs.vetterhealth.blogzone.SinglePostActivity"
             android:parentActivityName="com.shs.vetterhealth.blogzone.MainActivity"></activity>
-        <activity android:name="com.shs.vetterhealth.sleeptracker.MainActivity" />
-        <activity android:name="com.shs.vetterhealth.therapy.Dashboard" />
-        <activity android:name="com.shs.vetterhealth.therapy.AnalysisDisplay" />
-        <activity android:name="com.shs.vetterhealth.therapy.ApiAiTask" />
-        <activity android:name="com.shs.vetterhealth.chatbot.MainActivity" />
+        <activity android:name="com.shs.vetterhealth.sleeptracker.MainActivity"
+            android:parentActivityName="com.shs.vetterhealth.blogzone.MainActivity" />
+        <activity android:name="com.shs.vetterhealth.therapy.Dashboard"
+            android:parentActivityName="com.shs.vetterhealth.blogzone.MainActivity"></activity> />
+        <activity android:name="com.shs.vetterhealth.therapy.AnalysisDisplay"
+            android:parentActivityName="com.shs.vetterhealth.blogzone.MainActivity"></activity> />
+        <activity android:name="com.shs.vetterhealth.therapy.ApiAiTask"
+            android:parentActivityName="com.shs.vetterhealth.blogzone.MainActivity"></activity> />
+        <activity android:name="com.shs.vetterhealth.chatbot.MainActivity"
+            android:parentActivityName="com.shs.vetterhealth.blogzone.MainActivity" />
 
     </application>
 

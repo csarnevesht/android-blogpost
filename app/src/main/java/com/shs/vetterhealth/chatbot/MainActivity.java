@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,14 +42,13 @@ public class MainActivity extends AppCompatActivity implements AIListener {
     EditText editText;
     RelativeLayout addBtn;
     DatabaseReference mDataBaseReference;
-    FirebaseRecyclerAdapter<ChatMessage,chat_rec> adapter;
+    FirebaseRecyclerAdapter<ChatMessage, chat_rec> adapter;
     Boolean flagFab = true;
 
     private AIService aiService;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chatbot_activity_main);
 
@@ -76,36 +76,33 @@ public class MainActivity extends AppCompatActivity implements AIListener {
         final AIRequest aiRequest = new AIRequest();
 
 
-
-        addBtn.setOnClickListener(new View.OnClickListener()
-        {
+        addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 aiService.startListening();
 
                 String message = editText.getText().toString().trim();
 
-                if (!message.equals(""))
-                {
+                if (!message.equals("")) {
 
                     ChatMessage chatMessage = new ChatMessage(message, "user");
                     mDataBaseReference.child("chat").push().setValue(chatMessage);
 
                     aiRequest.setQuery(message);
-                    new AsyncTask<AIRequest, Void, AIResponse>(){
+                    new AsyncTask<AIRequest, Void, AIResponse>() {
 
                         @Override
                         protected AIResponse doInBackground(AIRequest... aiRequests) {
                             final AIRequest request = aiRequests[0];
                             try {
-                                Log.d("DialogFlowAsyncTask","Request" + aiRequest.toString());
+                                Log.d("DialogFlowAsyncTask", "Request" + aiRequest.toString());
                                 final AIResponse response = aiDataService.request(aiRequest);
                                 return response;
                             } catch (AIServiceException e) {
                             }
                             return null;
                         }
+
                         @Override
                         protected void onPostExecute(AIResponse response) {
                             if (response != null) {
@@ -117,16 +114,14 @@ public class MainActivity extends AppCompatActivity implements AIListener {
                             }
                         }
                     }.execute(aiRequest);
-                }
-                else {
-                 //   aiService.startListening();
+                } else {
+                    //   aiService.startListening();
                 }
 
                 editText.setText("");
 
             }
         });
-
 
 
         editText.addTextChangedListener(new TextWatcher() {
@@ -137,19 +132,18 @@ public class MainActivity extends AppCompatActivity implements AIListener {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                ImageView fab_img = (ImageView)findViewById(R.id.fab_img);
-                Bitmap img = BitmapFactory.decodeResource(getResources(),R.drawable.ic_send_white_24dp);
-                Bitmap img1 = BitmapFactory.decodeResource(getResources(),R.drawable.ic_mic_white_24dp);
+                ImageView fab_img = (ImageView) findViewById(R.id.fab_img);
+                Bitmap img = BitmapFactory.decodeResource(getResources(), R.drawable.ic_send_white_24dp);
+                Bitmap img1 = BitmapFactory.decodeResource(getResources(), R.drawable.ic_mic_white_24dp);
 
 
-                if (s.toString().trim().length()!=0 && flagFab){
-                    ImageViewAnimatedChange(MainActivity.this,fab_img,img);
-                    flagFab=false;
+                if (s.toString().trim().length() != 0 && flagFab) {
+                    ImageViewAnimatedChange(MainActivity.this, fab_img, img);
+                    flagFab = false;
 
-                }
-                else if (s.toString().trim().length()==0){
-                    ImageViewAnimatedChange(MainActivity.this,fab_img,img1);
-                    flagFab=true;
+                } else if (s.toString().trim().length() == 0) {
+                    ImageViewAnimatedChange(MainActivity.this, fab_img, img1);
+                    flagFab = true;
 
                 }
 
@@ -162,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements AIListener {
             }
         });
 
-        adapter = new FirebaseRecyclerAdapter<ChatMessage, chat_rec>(ChatMessage.class,R.layout.chatbot_msglist,chat_rec.class,mDataBaseReference.child("chat")) {
+        adapter = new FirebaseRecyclerAdapter<ChatMessage, chat_rec>(ChatMessage.class, R.layout.chatbot_msglist, chat_rec.class, mDataBaseReference.child("chat")) {
             @Override
             protected void populateViewHolder(chat_rec viewHolder, ChatMessage model, int position) {
 
@@ -173,8 +167,7 @@ public class MainActivity extends AppCompatActivity implements AIListener {
 
                     viewHolder.rightText.setVisibility(View.VISIBLE);
                     viewHolder.leftText.setVisibility(View.GONE);
-                }
-                else {
+                } else {
                     viewHolder.leftText.setText(model.getMsgText());
 
                     viewHolder.rightText.setVisibility(View.GONE);
@@ -202,28 +195,41 @@ public class MainActivity extends AppCompatActivity implements AIListener {
         });
 
         recyclerView.setAdapter(adapter);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
     }
+
+
 
     public void ImageViewAnimatedChange(Context c, final ImageView v, final Bitmap new_image) {
         final Animation anim_out = AnimationUtils.loadAnimation(c, R.anim.zoom_out);
-        final Animation anim_in  = AnimationUtils.loadAnimation(c, R.anim.zoom_in);
-        anim_out.setAnimationListener(new Animation.AnimationListener()
-        {
+        final Animation anim_in = AnimationUtils.loadAnimation(c, R.anim.zoom_in);
+        anim_out.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void onAnimationStart(Animation animation) {}
+            public void onAnimationStart(Animation animation) {
+            }
+
             @Override
-            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationRepeat(Animation animation) {
+            }
+
             @Override
-            public void onAnimationEnd(Animation animation)
-            {
+            public void onAnimationEnd(Animation animation) {
                 v.setImageBitmap(new_image);
                 anim_in.setAnimationListener(new Animation.AnimationListener() {
                     @Override
-                    public void onAnimationStart(Animation animation) {}
+                    public void onAnimationStart(Animation animation) {
+                    }
+
                     @Override
-                    public void onAnimationRepeat(Animation animation) {}
+                    public void onAnimationRepeat(Animation animation) {
+                    }
+
                     @Override
-                    public void onAnimationEnd(Animation animation) {}
+                    public void onAnimationEnd(Animation animation) {
+                    }
                 });
                 v.startAnimation(anim_in);
             }
@@ -234,7 +240,7 @@ public class MainActivity extends AppCompatActivity implements AIListener {
     @Override
     public void onResult(ai.api.model.AIResponse response) {
 
-        Log.d("DialogFlow","onResult" + response.toString());
+        Log.d("DialogFlow", "onResult" + response.toString());
 
         Result result = response.getResult();
 
@@ -280,18 +286,29 @@ public class MainActivity extends AppCompatActivity implements AIListener {
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                if (getFragmentManager().getBackStackEntryCount() != 0) {
+                    getFragmentManager().popBackStack();
+                } else {
+                    NavUtils.navigateUpFromSameTask(this);
+                }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
+    }
 
-        return super.onOptionsItemSelected(item);
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() != 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }
