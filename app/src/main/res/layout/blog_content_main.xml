@@ -7,7 +7,7 @@
     android:layout_margin="10dp"
     android:layout_height="match_parent"
     tools:context="com.shs.vetterhealth.blogzone.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/blog_activity_main">
 
 
     <androidx.recyclerview.widget.RecyclerView

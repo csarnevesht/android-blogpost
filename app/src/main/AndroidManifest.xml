@@ -33,6 +33,8 @@
         <activity android:name="com.shs.vetterhealth.blogzone.SinglePostActivity"
             android:parentActivityName="com.shs.vetterhealth.blogzone.MainActivity"></activity>
         <activity android:name="com.shs.vetterhealth.sleeptracker.MainActivity" />
+        <activity android:name="com.shs.vetterhealth.therapy.MainActivity" />
+
 
     </application>
 

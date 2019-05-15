@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnEv
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sleeptraciker_activity_main);
+        setContentView(R.layout.sleeptracker_activity_main);
 
         FrameLayout fl1 = (FrameLayout) findViewById(R.id.containerLeft);
         FrameLayout fl2 = (FrameLayout) findViewById(R.id.containerRight);

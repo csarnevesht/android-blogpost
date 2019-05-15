@@ -19,7 +19,6 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.mancj.materialsearchbar.MaterialSearchBar;
 import com.squareup.picasso.Picasso;
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.blog_activity_main);
         toolbar = findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.menu_main);
 
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth.addAuthStateListener(mAuthListener);
         FirebaseRecyclerAdapter<BlogPost, BlogzoneViewHolder> FBRA = new FirebaseRecyclerAdapter<BlogPost, BlogzoneViewHolder>(
                 BlogPost.class,
-                R.layout.card_items,
+                R.layout.blog_card_items,
                 BlogzoneViewHolder.class,
                 mDatabase
         ) {
@@ -118,6 +117,9 @@ public class MainActivity extends AppCompatActivity {
         }
         else if (id == R.id.action_sleeptrack) {
             startActivity(new Intent(MainActivity.this, com.shs.vetterhealth.sleeptracker.MainActivity.class));
+        }
+        else if (id == R.id.action_therapy) {
+            startActivity(new Intent(MainActivity.this, com.shs.vetterhealth.therapy.MainActivity.class));
         }
         else if (id == R.id.action_add) {
             startActivity(new Intent(MainActivity.this, PostActivity.class));

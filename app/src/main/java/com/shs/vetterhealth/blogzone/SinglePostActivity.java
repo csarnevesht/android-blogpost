@@ -29,7 +29,7 @@ public class SinglePostActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_single_post);
+        setContentView(R.layout.blog_activity_single_post);
 
         singelImage = (ImageView)findViewById(R.id.singleImageview);
         singleTitle = (TextView)findViewById(R.id.singleTitle);
