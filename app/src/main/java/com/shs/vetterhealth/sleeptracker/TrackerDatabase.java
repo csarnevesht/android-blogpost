@@ -2,10 +2,12 @@ package com.shs.vetterhealth.sleeptracker;
 
 import android.util.Log;
 
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -20,9 +22,12 @@ public class TrackerDatabase {
     public ArrayList<Observation> getData() {
         final ArrayList<Observation> list = new ArrayList<Observation>();
 
-        Firebase.setAndroidContext(new MainActivity());
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("BlogPost");
 
-        Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
+
+//        Firebase.setAndroidContext(new MainActivity());
+//
+//        Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
 
 
 
@@ -64,7 +69,7 @@ public class TrackerDatabase {
             }
 
             @Override
-            public void onCancelled(FirebaseError firebaseError) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
         });
