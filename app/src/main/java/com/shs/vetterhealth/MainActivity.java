@@ -1,4 +1,4 @@
-package com.shs.vetterhealth.blogzone;
+package com.shs.vetterhealth;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,7 +19,10 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.shs.vetterhealth.therapy.Dashboard;
+import com.shs.vetterhealth.blogzone.BlogPost;
+import com.shs.vetterhealth.blogzone.PostActivity;
+import com.shs.vetterhealth.R;
+import com.shs.vetterhealth.blogzone.SinglePostActivity;
 import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {

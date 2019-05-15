@@ -26,6 +26,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.shs.vetterhealth.MainActivity;
+import com.shs.vetterhealth.R;
 
 public class PostActivity extends AppCompatActivity {
     // imports

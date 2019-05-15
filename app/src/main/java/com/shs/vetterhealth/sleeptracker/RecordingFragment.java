@@ -15,7 +15,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.shs.vetterhealth.blogzone.R;
+import com.shs.vetterhealth.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_margin="10dp"
     android:layout_height="match_parent"
-    tools:context="com.shs.vetterhealth.blogzone.MainActivity"
+    tools:context="com.shs.vetterhealth.MainActivity"
     tools:showIn="@layout/blog_activity_main">
 
 

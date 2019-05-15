@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.shs.vetterhealth.blogzone.R;
+import com.shs.vetterhealth.R;
 
 /**
  * Created by kartikey on 1/24/2016.

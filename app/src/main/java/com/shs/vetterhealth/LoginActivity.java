@@ -1,4 +1,4 @@
-package com.shs.vetterhealth.blogzone;
+package com.shs.vetterhealth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.shs.vetterhealth.R;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText loginEmail, loginPass;

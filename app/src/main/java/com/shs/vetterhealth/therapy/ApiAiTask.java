@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
 
 import com.google.gson.JsonElement;
-import com.shs.vetterhealth.blogzone.R;
+import com.shs.vetterhealth.R;
 
 import java.util.Map;
 

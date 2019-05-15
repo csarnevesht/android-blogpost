@@ -14,7 +14,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.shs.vetterhealth.blogzone.R;
+import com.shs.vetterhealth.R;
 
 import java.util.Map;
 

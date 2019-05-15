@@ -13,7 +13,7 @@ import androidx.core.app.NavUtils;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.shs.vetterhealth.blogzone.R;
+import com.shs.vetterhealth.R;
 
 public class MainActivity extends AppCompatActivity implements MainFragment.OnEventSelectedListener {
 

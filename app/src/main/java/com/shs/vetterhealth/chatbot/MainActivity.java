@@ -25,7 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.shs.vetterhealth.blogzone.R;
+import com.shs.vetterhealth.R;
 
 import ai.api.AIDataService;
 import ai.api.AIListener;

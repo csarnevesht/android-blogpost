@@ -18,7 +18,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.shs.vetterhealth.blogzone.R;
+import com.shs.vetterhealth.R;
 
 public class Dashboard extends AppCompatActivity {
     private int counter=0;

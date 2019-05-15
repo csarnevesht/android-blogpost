@@ -15,6 +15,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.shs.vetterhealth.MainActivity;
+import com.shs.vetterhealth.R;
 import com.squareup.picasso.Picasso;
 
 public class SinglePostActivity extends AppCompatActivity {

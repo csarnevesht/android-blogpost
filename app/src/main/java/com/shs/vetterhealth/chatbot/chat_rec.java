@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.shs.vetterhealth.blogzone.R;
+import com.shs.vetterhealth.R;
 
 /**
  * Created by Abhishek on 17/4/18.

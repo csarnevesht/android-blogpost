@@ -1,4 +1,4 @@
-package com.shs.vetterhealth.blogzone;
+package com.shs.vetterhealth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.shs.vetterhealth.R;
 
 public class RegisterActivity extends AppCompatActivity {
     private Button registerBtn;

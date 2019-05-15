@@ -1,4 +1,4 @@
-package com.shs.vetterhealth.blogzone;
+package com.shs.vetterhealth;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.shs.vetterhealth.R;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 //import com.theartofdev.edmodo.cropper.CropImage;
