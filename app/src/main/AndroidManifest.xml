@@ -32,6 +32,8 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity android:name="com.shs.vetterhealth.blogzone.SinglePostActivity"
             android:parentActivityName="com.shs.vetterhealth.blogzone.MainActivity"></activity>
+        <activity android:name="com.shs.vetterhealth.sleeptracker.MainActivity" />
+
     </application>
 
 </manifest>
