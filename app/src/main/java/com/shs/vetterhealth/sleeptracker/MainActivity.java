@@ -25,12 +25,6 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnEv
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sleeptraciker_activity_main);
 
-//        Firebase.setAndroidContext(this);
-//
-//        Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
-
-        //ref.child("message").setValue("Checking");
-
         FrameLayout fl1 = (FrameLayout) findViewById(R.id.containerLeft);
         FrameLayout fl2 = (FrameLayout) findViewById(R.id.containerRight);
 

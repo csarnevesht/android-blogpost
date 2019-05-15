@@ -91,12 +91,6 @@ public class MainFragment extends Fragment {
         });
 
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("sleeptracker");
-
-
-//        Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
-//
-//        Query q = ref.orderByKey();  //ref.orderByChild("date");
-
         Query q = mDatabase.orderByKey();
 
 
