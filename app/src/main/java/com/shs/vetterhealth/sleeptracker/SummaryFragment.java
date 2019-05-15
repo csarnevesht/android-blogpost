@@ -48,7 +48,7 @@ public class SummaryFragment extends Fragment {
 
 //        Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("BlogPost");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("sleeptracker");
 
 
 

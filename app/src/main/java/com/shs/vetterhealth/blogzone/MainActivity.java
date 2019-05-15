@@ -19,8 +19,10 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mancj.materialsearchbar.MaterialSearchBar;
 import com.squareup.picasso.Picasso;
 public class MainActivity extends AppCompatActivity {
+    private Toolbar toolbar;
     private RecyclerView recyclerView;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
@@ -29,8 +31,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.menu_main);
+
         setSupportActionBar(toolbar);
+
         //initialize recyclerview and FIrebase objects
         recyclerView = (RecyclerView)findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -111,7 +116,10 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-       else if (id == R.id.action_add) {
+        else if (id == R.id.action_sleeptrack) {
+            startActivity(new Intent(MainActivity.this, com.shs.vetterhealth.sleeptracker.MainActivity.class));
+        }
+        else if (id == R.id.action_add) {
             startActivity(new Intent(MainActivity.this, PostActivity.class));
         } else if (id == R.id.logout){
             mAuth.signOut();

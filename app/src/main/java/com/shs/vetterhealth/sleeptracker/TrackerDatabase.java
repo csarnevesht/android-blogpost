@@ -22,7 +22,7 @@ public class TrackerDatabase {
     public ArrayList<Observation> getData() {
         final ArrayList<Observation> list = new ArrayList<Observation>();
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("BlogPost");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("sleeptracker");
 
 
 //        Firebase.setAndroidContext(new MainActivity());
