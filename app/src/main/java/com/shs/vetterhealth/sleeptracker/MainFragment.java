@@ -1,9 +1,10 @@
 package com.shs.vetterhealth.sleeptracker;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +13,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.Query;
+
+import com.google.firebase.FirebaseException;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.shs.vetterhealth.blogzone.R;
 
 import java.util.ArrayList;
@@ -85,10 +89,14 @@ public class MainFragment extends Fragment {
             }
         });
 
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("sleeptracker");
 
-        Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
 
-        Query q = ref.orderByKey();  //ref.orderByChild("date");
+//        Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
+//
+//        Query q = ref.orderByKey();  //ref.orderByChild("date");
+
+        Query q = mDatabase.orderByKey();
 
 
         adapter.clear();
@@ -135,9 +143,11 @@ public class MainFragment extends Fragment {
             }
 
             @Override
-            public void onCancelled(FirebaseError firebaseError) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
+
+
         });
 
 

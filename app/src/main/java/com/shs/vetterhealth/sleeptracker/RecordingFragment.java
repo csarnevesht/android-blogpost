@@ -1,8 +1,8 @@
 package com.shs.vetterhealth.sleeptracker;
 
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.firebase.client.Firebase;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.shs.vetterhealth.blogzone.R;
 
 import java.text.SimpleDateFormat;
@@ -51,9 +53,11 @@ public class RecordingFragment extends DialogFragment {
 
                 Toast t = Toast.makeText(getActivity(), "Saved!", Toast.LENGTH_LONG);
 
-                Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
-
-                Firebase obsref = ref.child("observations");
+                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("sleeptracker");
+//
+//                Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
+//
+//                Firebase obsref = ref.child("observations");
 
                 Map<String, String> post = new HashMap<String, String>();
                 post.put("title",title.getText().toString());
@@ -62,7 +66,7 @@ public class RecordingFragment extends DialogFragment {
                 post.put("date",date);
 
 
-                ref.push().setValue(post);
+                mDatabase.push().setValue(post);
 
                 t.show();
 

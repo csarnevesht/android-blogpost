@@ -1,8 +1,9 @@
 package com.shs.vetterhealth.sleeptracker;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
+
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,7 +11,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 
-import com.firebase.client.Firebase;
+
 import com.shs.vetterhealth.blogzone.R;
 
 public class MainActivity extends AppCompatActivity implements MainFragment.OnEventSelectedListener {
@@ -23,9 +24,9 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnEv
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sleeptraciker_activity_main);
 
-        Firebase.setAndroidContext(this);
-
-        Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
+//        Firebase.setAndroidContext(this);
+//
+//        Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
 
         //ref.child("message").setValue("Checking");
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnEv
         Log.v("Checking framelayout1", fl1.toString());
         Log.v("Checking framelayout2", fl2.toString());
 
-        FragmentManager fm = getFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
 
 
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnEv
 
     public void onEventSelected(Observation o){
 
-        FragmentManager fm = getFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
 
 

@@ -1,16 +1,18 @@
 package com.shs.vetterhealth.sleeptracker;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.shs.vetterhealth.blogzone.R;
 
 import java.util.Map;
@@ -43,7 +45,10 @@ public class SummaryFragment extends Fragment {
         childrenCount = 0;
 
 
-        Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
+//        Firebase ref = new Firebase("https://redclonefb.firebaseio.com/");
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("BlogPost");
+
 
 
         ref.addChildEventListener(new ChildEventListener() {
@@ -85,9 +90,10 @@ public class SummaryFragment extends Fragment {
             }
 
             @Override
-            public void onCancelled(FirebaseError firebaseError) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
+
         });
 
         return rootView;

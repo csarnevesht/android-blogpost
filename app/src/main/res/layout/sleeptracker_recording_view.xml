@@ -35,7 +35,7 @@
         android:id="@+id/addComment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Additional comments for sleepzzzz"
+        android:hint="Additional comments for sleep"
         android:layout_marginTop="20dp"/>
 
     <Button
