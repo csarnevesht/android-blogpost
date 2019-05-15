@@ -44,7 +44,7 @@ public class SinglePostActivity extends AppCompatActivity {
 
                 mDatabase.child(post_key).removeValue();
 
-                Intent mainintent = new Intent(SinglePostActivity.this, MainActivity.class);
+                Intent mainintent =new Intent(SinglePostActivity.this, MainActivity.class);
                 startActivity(mainintent);
             }
         });
